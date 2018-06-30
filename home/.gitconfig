@@ -1,14 +1,32 @@
 [push]
 	default = simple
+[core]
+	trustctime = false
+	editor = vim
+	fileMode = true
+[color]
+	ui = true
+[credential]
+	helper = cache --timeout=3600
 [pull]
 	rebase = true
+[diff]
+	tool = meld
+[merge]
+	tool = meld
+[mergetool]
+	keeptemporaries = false
+	keepbackups = false
+	prompt = false
+	trustexitcode = false
 [alias]
 	last = log -1 --stat
+	cp = cherry-pick
+	co = checkout
+	cl = clone
+	ci = commit
 	st = status -sb
+	br = branch
+	unstage = reset HEAD --
 	dc = diff --cached
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative
-	la = log --graph --color --name-status --format='%C(yellow)%h%Creset %cr %C(blue)%cn%Creset -%C(auto)%d%Creset %s' --all
-        assume = update-index --assume-unchanged
-	unassume = update-index --no-assume-unchanged
-	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
-	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
