@@ -11,14 +11,18 @@ installi3: install
 installdev: install
 	xargs -d '\n' -a packages/dev.list yay --noconfirm --needed -S
 
-i3:
+dev:
+	$(stow) vim
+	$(stow) others
+
+i3: dev
 	$(stow) i3
 	$(stow) polybar
 	$(stow) compton
 	$(stow) rofi
-	$(stow) vim
-	$(stow) others
 	xrdb ~/.Xresources
 
 xfce:
 	$(stow) xfce4
+	$(stow) vim
+	$(stow) others
