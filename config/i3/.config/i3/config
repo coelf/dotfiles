@@ -51,7 +51,7 @@ client.background       $background
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec urxvt
 bindsym $mod+t exec thunar
 
 # kill focused window
@@ -219,14 +219,14 @@ bindsym $mod+r mode "resize"
 
 
 exec --no-startup-id compton
-# Désactive capslock 
+# Désactive capslock
 exec --no-startup-id setxkbmap -option caps:none
 
 
 # Redémarre polybar quand on redémarre i3
 exec_always --no-startup-id "killall polybar;polybar -r default"
 
-assign [class="Code"]                    $ws1
-assign [class="Navigator"]               $ws3
+assign [class="Code"]           $ws1
+assign [class="Navigator"]      $ws3
 assign [class="Nightly"]        $ws3
 assign [class="Firefox"]        $ws3
