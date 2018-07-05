@@ -12,6 +12,8 @@ installdev: install
 	xargs -d '\n' -a packages/dev.list yay --noconfirm --needed -S
 
 dev:
+
+	$(stow) git
 	$(stow) vim
 	$(stow) others
 
@@ -22,7 +24,5 @@ i3: dev
 	$(stow) rofi
 	xrdb ~/.Xresources
 
-xfce:
+xfce: dev
 	$(stow) xfce4
-	$(stow) vim
-	$(stow) others
