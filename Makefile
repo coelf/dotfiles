@@ -30,3 +30,6 @@ xfce: dev
 mousepad:
 	xargs -d '\n' -a packages/mouse.list yay --noconfirm --needed -S
 	sudo ln -sf `pwd`/etc/X11/xorg.conf.d/70-synaptics.conf /etc/X11/xorg.conf.d
+noxbell:
+	sudo ln -sf `pwd`/etc/modprobe.d/blacklist.conf /etc/modprobe.d/blacklist.conf
+conf: mousepad noxbell
