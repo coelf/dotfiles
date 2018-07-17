@@ -26,3 +26,7 @@ i3: dev
 
 xfce: dev
 	$(stow) xfce4
+
+mousepad:
+	xargs -d '\n' -a packages/mouse.list yay --noconfirm --needed -S
+	sudo ln -sf `pwd`/etc/X11/xorg.conf.d/70-synaptics.conf /etc/X11/xorg.conf.d
