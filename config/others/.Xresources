@@ -42,7 +42,8 @@ Xft.lcdfilter:      lcddefault
 !   Couleurs
 ! ============
 *secondary:  #4C566A
-*active:     #D8DEE9
+!*active:     #D8DEE9
+*active:    #FFCC66 
 
 #define nord0 #222D32
 #define nord1 #3B4252

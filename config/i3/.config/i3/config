@@ -221,7 +221,9 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id compton
 # Désactive capslock
 exec --no-startup-id setxkbmap -option caps:none
+exec_always --no-startup-id feh --bg-scale ~/Images/wallpaper.jpg
 
+new_window pixel 1
 
 # Redémarre polybar quand on redémarre i3
 exec_always --no-startup-id "killall polybar;polybar -r default"
