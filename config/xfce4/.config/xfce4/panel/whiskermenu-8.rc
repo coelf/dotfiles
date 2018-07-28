@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-web-browser.desktop,exo-mail-reader.desktop,pamac-manager.desktop
-recent=mousepad.desktop,xfce-mouse-settings.desktop,visual-studio-code.desktop,firefox.desktop,eclipse.desktop,exo-web-browser.desktop,pamac-manager.desktop,ms-skype.desktop,exo-mail-reader.desktop,exo-terminal-emulator.desktop
+recent=transmission-remote-gtk.desktop,exo-terminal-emulator.desktop,exo-web-browser.desktop,firefox.desktop,mousepad.desktop,xfce-mouse-settings.desktop,visual-studio-code.desktop,pamac-manager.desktop,ms-skype.desktop,exo-mail-reader.desktop
 button-title=Applications
 button-icon=/usr/share/icons/whiskermenu-manjaro.svg
 button-single-row=false
