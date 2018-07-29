@@ -1,9 +1,10 @@
 compton
 feh
 i3-wm
+i3lock
 polybar-git
 rofi
 rxvt-unicode
+ttf-font-awesome-4
 xcwd-git
 xorg-xbacklight
-ttf-font-awesome-4
