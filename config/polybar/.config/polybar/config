@@ -24,6 +24,7 @@ underline = ${xrdb:color3}
 ram = ${xrdb:color14}
 cpu = ${xrdb:color13}
 power= ${colors.urgent}
+network=${xrdb:color6}
 
 
 
@@ -34,6 +35,7 @@ height = 30
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 6.0
+
 fixed-center = false
 
 background = ${colors.background}
@@ -52,17 +54,15 @@ module-margin-left = 1
 module-margin-right = 2
 
 
-font-0 = System San Francisco Display:size=10;2
+font-0 = System San Francisco Display:size=11
 font-1 = FontAwesome:size=11;3
 font-2 = Font Awesome 5 Free:style=Solid:size=11
-font-3 = MaterialIcons:size=10;3
-# font-4 = fixed:pixelsize=10;1
-font-4 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-5 = siji:pixelsize=10;1
+font-3 = Font Awesome 5 Brands:style=Regular:size=11
+font-4 = MaterialIcons:size=11;3
 
 modules-left =  i3
 modules-center = xwindow
-modules-right =  wlan eth xkeyboard memory cpu  temperature battery xbacklight volume date powermenu
+modules-right =  mpd wlan eth xkeyboard memory cpu  temperature battery xbacklight volume date powermenu
 ;modules-right = filesystem xkeyboard memory cpu  battery volume date powermenu
 
 tray-position = right
@@ -143,7 +143,7 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-foreground = #000000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
@@ -171,12 +171,12 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
-ws-icon-3 = 4;
+ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
 ws-icon-9 = 10;
 
 [module/mpd]
@@ -198,7 +198,6 @@ type = internal/xbacklight
 format = <ramp> <label> <bar>
 # format-underline = #FFF
 #  <bar>
-# label = 
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
@@ -221,47 +220,46 @@ card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
-interval = 0.5
+interval = 1
 format = <label> <ramp-coreload>
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #f9dd00
+format-underline = ${colors.cpu}
 label = %percentage:2%%
 
-
-ramp-coreload-0 = ▁
-ramp-coreload-0-font = 4
-ramp-coreload-0-foreground = #aaff77
-ramp-coreload-1 = ▂
-ramp-coreload-1-font = 4
-ramp-coreload-1-foreground = #aaff77
-ramp-coreload-2 = ▃
-ramp-coreload-2-font = 4
-ramp-coreload-2-foreground = #aaff77
-ramp-coreload-3 = ▄
-ramp-coreload-3-font = 4
-ramp-coreload-3-foreground = #aaff77
-ramp-coreload-4 = ▅
-ramp-coreload-4-font = 4
-ramp-coreload-4-foreground = #fba922
-ramp-coreload-5 = ▆
-ramp-coreload-5-font = 4
-ramp-coreload-5-foreground = #fba922
-ramp-coreload-6 = ▇
-ramp-coreload-6-font = 4
-ramp-coreload-6-foreground = #ff5555
-ramp-coreload-7 = █
-dramp-coreload-7-font = 4
-ramp-coreload-7-foreground = #ff5555
+# ramp-coreload-0 = ▁
+# ramp-coreload-0-font = 4
+# ramp-coreload-0-foreground = #aaff77
+# ramp-coreload-1 = ▂
+# ramp-coreload-1-font = 4
+# ramp-coreload-1-foreground = #aaff77
+# ramp-coreload-2 = ▃
+# ramp-coreload-2-font = 4
+# ramp-coreload-2-foreground = #aaff77
+# ramp-coreload-3 = ▄
+# ramp-coreload-3-font = 4
+# ramp-coreload-3-foreground = #aaff77
+# ramp-coreload-4 = ▅
+# ramp-coreload-4-font = 4
+# ramp-coreload-4-foreground = #fba922
+# ramp-coreload-5 = ▆
+# ramp-coreload-5-font = 4
+# ramp-coreload-5-foreground = #fba922
+# ramp-coreload-6 = ▇
+# ramp-coreload-6-font = 4
+# ramp-coreload-6-foreground = #ff5555
+# ramp-coreload-7 = █
+# dramp-coreload-7-font = 4
+# ramp-coreload-7-foreground = #ff5555
 
 
 [module/memory]
 type = internal/memory
-interval = 2
+interval = 5
 format-prefix = " "
-format-foreground = ${colors.ram}
-label-foreground = ${colors.ram}
+# format-foreground = ${colors.ram}
+# label-foreground = ${colors.ram}
 format-underline = ${colors.ram}
 label = %percentage_used%%
 
@@ -278,7 +276,7 @@ ping-interval = 10
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-format-connected-underline = #9f78e1
+format-connected-underline = ${colors.network}
 format-connected = <ramp-signal> <label-connected>
 label-connected =%essid%     %downspeed%    %upspeed%
 #:%local_ip%
@@ -303,7 +301,7 @@ interface = enp9s0
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -418,13 +416,13 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #ffdd00
+format-underline = #eedd00
 format-warn = <ramp> <label-warn>
 format-warn-underline = #ff0000
 
 label =  %temperature-c%
-label-warn =  %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn = %temperature-c%
+label-warn-foreground = ${self.format-warn-underline}
 
 
 ramp-0 = 
@@ -442,7 +440,7 @@ format-spacing = 1
 
 label-open = 
 label-open-foreground = ${colors.power}
-label-close = 
+label-close = 
 label-close-foreground = ${colors.power}
 label-separator = |
 label-separator-foreground = ${colors.secondary}
