@@ -237,3 +237,8 @@ assign [class="Nightly"]        $ws3
 assign [class="Firefox"]        $ws3
 assign [class="Gitg"]           $ws6
 assign [class="Meld"]           $ws6
+assign [class="Google-chrome"]  $ws7
+assign [class="jetbrains-idea"] $ws8
+
+
+# for_window [class="^jetbrains-.+"][window_type=dialog] focus

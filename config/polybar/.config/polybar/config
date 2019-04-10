@@ -221,7 +221,8 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 1
-format = <label> <ramp-coreload>
+format = <label>
+# <ramp-coreload>
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
