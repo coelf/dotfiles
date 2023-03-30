@@ -2,7 +2,7 @@
 	default = simple
 [core]
 	trustctime = false
-	editor = vim
+	editor = code --wait
 	fileMode = true
 [color]
 	ui = true
@@ -30,5 +30,13 @@
 	unstage = reset HEAD --
 	dc = diff --cached
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative
+	hide = update-index --assume-unchanged
+    unhide = update-index --no-assume-unchanged
+    unhide-all = ! git ls-files -v | grep '^[a-z]' | cut -c3- | xargs git unhide --
+    hidden = ! git ls-files -v | grep '^[a-z]' | cut -c3-
 [fetch]
 	prune = true
+[user]
+	email = fcoelho@slimpay.com
+	name = Filipe Coelho
+

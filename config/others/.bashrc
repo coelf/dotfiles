@@ -126,3 +126,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export MYZIPAY_CONFIG_DIR="/home/fcoelho/work/getting-started/slimpaytpe16"
+
+#export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
